@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImmoClair — Activer votre Pass</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --accent: #1d4ed8;
+      --warn: #b45309;
+      --ok: #15803d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #dbeafe 0%, transparent 55%),
+        radial-gradient(900px 400px at 100% 0%, #fef3c7 0%, transparent 50%),
+        var(--bg);
+    }
+    main {
+      width: min(640px, calc(100% - 32px));
+      margin: 48px auto;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    .lead { margin: 0 0 24px; color: var(--muted); }
+    .steps { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+    .steps li {
+      position: relative;
+      padding: 14px 14px 14px 52px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+    }
+    .steps strong { display: block; margin-bottom: 4px; }
+    .callout {
+      margin: 22px 0 0;
+      padding: 14px 16px;
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      color: var(--warn);
+      border-radius: 0 10px 10px 0;
+    }
+    .ok { color: var(--ok); font-weight: 700; }
+    footer { margin-top: 20px; font-size: 0.9rem; color: var(--muted); }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="ok">Paiement reçu</p>
+    <h1>Activez votre Pass Recherche</h1>
+    <p class="lead">
+      Lemon Squeezy vous a envoyé une <strong>clé de licence</strong> par e-mail
+      (elle apparaît aussi sur la page de confirmation de commande).
+      Sans l’étape ci-dessous, ImmoClair reste en mode gratuit.
+    </p>
+    <ol class="steps">
+      <li>
+        <strong>Copiez votre clé</strong>
+        Elle ressemble à un UUID, par exemple <code>38b1460a-5104-4067-…</code>.
+        Cherchez-la dans l’e-mail « Your license key » / reçu Lemon Squeezy.
+      </li>
+      <li>
+        <strong>Ouvrez l’extension ImmoClair</strong>
+        Cliquez sur l’icône ImmoClair dans la barre Chrome (puzzle → ImmoClair si besoin).
+      </li>
+      <li>
+        <strong>Collez la clé et activez</strong>
+        Section <em>Licence Pro</em> → coller la clé → bouton <em>Activer</em>.
+        Le badge passe à « Pro ».
+      </li>
+    </ol>
+    <p class="callout">
+      Astuce : gardez cet onglet ouvert, ouvrez le popup ImmoClair, puis revenez
+      copier-coller la clé depuis votre e-mail ou votre page de commande.
+    </p>
+    <footer>
+      Besoin d’aide ? <a href="mailto:windinfo@proton.me">windinfo@proton.me</a>
+      · <a href="./">Politique de confidentialité</a>
+    </footer>
+  </main>
+</body>
+</html>
